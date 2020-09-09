@@ -43,7 +43,7 @@ Example message = QR8Y4D6FNRCI16F8WJV9JOE40AH10NFW
 Example digest =  0x8ae028bfc46ae69dedb649ae1792cb059a7f4e02f81b84282bdf93bd46116bd6
 25 hashes per seconds!
 Example message =  This is the canary #99. asdfasdfasdfasdfasdfqwerqwerqwerdfnnjkdfnjldljknsvv
-Example digest =  0x90c512bbf16505946c13f53fa7fe0bbf96e6e6bc1e313c1cfc70533f3914779f
+Example digest =  <strong>0x90c512bbf16505946c13f53fa7fe0bbf</strong>96e6e6bc1e313c1cfc70533f3914779f
 Example message = IC8Y2L4VS70WBV64HI2FP9SGDH9D1PJL
 Example digest =  0xfe980a1c9613b0c46869f20487747dded3013419bfcd59ae0343e27828d3fb93
 25 hashes per seconds!
