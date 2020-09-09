@@ -1,7 +1,7 @@
 # mirror-hash
 An experimental hashing algorithm for optical/quantum computers based on Toffoli and Fredkin gates.
 
-With standard 256-bit input it has 64 layers of the following gates. Each has 2 sublayers of Toffoli or Fredkin gates in zig-zag fashion. The symmetry and type of gate is determined by the previous block (called layer encoding here) of the hash and also there is a XOR with the current layer encoding to avoid 0-to-0 hashes.
+With standard 256-bit input it has 64 layers of the following gates. Each has 2 sublayers of Toffoli or Fredkin gates in zig-zag fashion. The symmetry (mirrored or not) and type of gate (Toffoli or Fredkin) is determined by the previous block (called layer encoding here) of the hash and also there is a XOR with the current layer encoding to avoid 0-to-0 hashes.
 
 ```
    def hashLayerPass(self, layer, block, startLeft=None):
