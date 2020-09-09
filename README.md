@@ -1,6 +1,24 @@
 # mirror-hash
 An experimental hashing algorithm for optical/quantum computers based on Toffoli and Fredkin gates.
 
+With standard 256-bit input it has 64 layers of the following gates. Each has 2 sublayers of Toffoli or Fredkin gates in zig-zag fashion. The symmetry and type of gate is determined by the previous block (called layer encoding here) of the hash and also there is a XOR with the current layer encoding to avoid 0-to-0 hashes.
+
+```
+   def hashLayerPass(self, layer, block, startLeft=None):
+        #     Layer1 (a zigzag)                                                                             
+        # 1    ### @@@                                                                                     
+        # 2    ###                                                                                         
+        # 3    ### @@@                                                                                     
+        # 4        @@@                                                                                     
+        # 5    ### @@@                                                                                     
+        # 6    ###                                                                                         
+        # 7    ### @@@                                                                                     
+        # 8        @@@                                                                                                                                                                                                                                                          
+        # Size must divisible by 8                                                                   
+        # Each 3-wire gate can be Toffoli or Fredkin, mirrored or not., 4 choices.                        
+        # First a XOR with layer encoding to avoid 0 to 0 hashes.         
+```
+
 # Example
 
 There is still some bugs to fix because with random input works well but with not random input is the has is not random.
