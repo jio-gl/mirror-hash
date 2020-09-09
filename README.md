@@ -3,6 +3,8 @@ An experimental hashing algorithm for optical/quantum computers based on Toffoli
 
 # Example
 
+There is still some bugs to fix because with random input works well but with not random input is the has is not random.
+
 ```
 $ python2 mirror.py
 Message= This is the canary.
