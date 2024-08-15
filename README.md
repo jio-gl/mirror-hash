@@ -52,3 +52,9 @@ Example digest =  0x6d3f47247b36c30c115a3d669354fcf8f4c39e7bb3cce77bba04f8c26a89
 Example message = 3KPELWAT572JK6BVZCFQI1J8FJWO9UT7
 Example digest =  0x1443240f717721e2fb7e2a339ff721ac344e93dd09531b47da03acc5c9145710
 ```
+
+# Rust version
+
+```bash
+cargo run "This is the canary."
+```
