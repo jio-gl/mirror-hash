@@ -44,7 +44,7 @@ class mirror256(object):
     Mirror256 Hash Function, Provable Reversible (Biyective) for Hashes.
     '''
 
-    DEFAULT_DEPTH = 64 #1 #16
+    DEFAULT_DEPTH = 128 #1 #16
     DEFAULT_SIZE  = 256 #8 # 256
     GATES = [0, 1]#['Toffoli','Fredkin']
 
@@ -155,13 +155,14 @@ class mirror256(object):
 
 
     def pack(self, hm):
-        hb = [0]*(self.depth//2)
-        i = 0
-        for i in range(self.depth//2):
-            b = hm[i*2] << 4
-            b = b | hm[i*2+1]  
-            hb[i] = b
-        return struct.pack('!32B', *hb)
+        hb = [0] * (self.size // 8)
+        for i in range(self.size // 8):
+            if i * 2 < len(hm):
+                b = hm[i * 2] << 4
+                if i * 2 + 1 < len(hm):
+                    b = b | hm[i * 2 + 1]
+                hb[i] = b
+        return struct.pack(f'!{self.size // 8}B', *hb)
     
     def digest(self):
         return self.pack(self._hashed)
@@ -352,7 +353,7 @@ if __name__ == "__main__":
     c = 0
     for i in range(1024):
         digest = h.digest()
-        #print i, '0x' + digest.encode('hex')
+        print( i, h.hexdigest())
         randStr = randomAlfanumericString(N=32)
         #print len(randStr), randStr
         msg = 'This is the canary #%d. asdfasdfasdfasdfasdfqwerqwerqwerdfnnjkdfnjldljknsvv' % i
